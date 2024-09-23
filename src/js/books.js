@@ -196,12 +196,7 @@ The Farseer Trilogy: Assassin's Quest,1997,Fantasy,Robin Hobb
 The Wheel of Time: The Eye of the World,1990,Fantasy,Robert Jordan
 The Wheel of Time: The Great Hunt,1990,Fantasy,Robert Jordan
 The Wheel of Time: The Dragon Reborn,1991,Fantasy,Robert Jordan
-The Wheel of Time: The Shadow Rising,1992,Fantasy,Robert Jordan
-The Lord of the Rings: The Two Towers,1954,Fantasy,J.R.R. Tolkien,./src/assets/images/The Lord of the Rings: The Two Towers.png
-Animal Farm,1945,History,George Orwell
-The Three Musketeers,1844,Adventure,Alexandre Dumas,./src/assets/images/The Three Musketeers.png
-The Count of Monte Cristo,1844,Adventure,Alexandre Dumas, ./src/assets/images/The Count of Monte Cristo.png
-Don Quixote,1605,Comedy,Miguel de Cervantes,./src/assets/images/Don Quixote.png`;
+The Wheel of Time: The Shadow Rising,1992,Fantasy,Robert Jordan`;
 
 let libraryRenderer;
 

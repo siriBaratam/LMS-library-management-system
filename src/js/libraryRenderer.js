@@ -57,7 +57,7 @@ const createButton = (text, className, callback) => {
   return button;
 };
 
-const createDot = isAvailable => {
+const createAvailabilityBar = isAvailable => {
   const dot = document.createElement('div');
   dot.classList.add((isAvailable ? 'available' : 'unavailable') + '-bar');
   return dot;
@@ -324,7 +324,7 @@ const renderBook = (book, parent) => {
     renderBookActionsPopup(book.id)
   );
 
-  const statusDot = createDot(book.isAvailable);
+  const statusDot = createAvailabilityBar(book.isAvailable);
   bookContainer.appendChild(statusDot);
 
   const bookName = createPTag(book.name, 'book-name');

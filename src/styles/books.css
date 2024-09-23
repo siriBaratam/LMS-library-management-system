@@ -47,27 +47,22 @@ header {
 }
 
 .home-actions {
-  width: 700px;
   display: flex;
-  justify-content: space-between;
 }
 
-.group-by-container label,
-.sort-by-container label {
+.group-by-container label {
   font-size: large;
   font-weight: bold;
 }
 
-#group-by,
-#sort-by {
-  padding: 8px;
+#group-by {
+  padding: 5px;
   font-size: large;
   margin-left: 10px;
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
 }
 
-#group-by:focus,
-#sort-by:focus {
+#group-by:focus {
   outline: none;
 }
 
@@ -75,10 +70,11 @@ header {
   height: fit-content;
   border: none;
   background-color: white;
-  padding: 10px;
+  padding: 7px;
   cursor: pointer;
   font-size: medium;
   font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  margin-left: 50px;
 }
 
 .books-group {

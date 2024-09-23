@@ -23,29 +23,7 @@ const lendOrReturnBook = id => {
   book.isAvailable = !book.isAvailable;
 };
 
-const sortBooks = (books, sortSelection) => {
-  if (sortSelection == 'publishedYear') {
-    books.sort((book1, book2) => {
-      return Number(book1.publishedYear) - Number(book2.publishedYear);
-    });
-  } else if (sortSelection == 'isAvailable') {
-    books.sort((book1, book2) => {
-      if (book1.isAvailable) return -1;
-      if (book2.isAvailable) return 1;
-      return 0;
-    });
-  } else if (sortSelection == 'none') {
-    books.sort((book1, book2) => Number(book2.id) - Number(book1.id));
-  } else {
-    books.sort((book1, book2) => {
-      if (book1[sortSelection] < book2[sortSelection]) return -1;
-      if (book1[sortSelection] > book2[sortSelection]) return 1;
-      return 0;
-    });
-  }
-};
-
-const groupBooks = (groupSelection, sortSelection) => {
+const groupBooks = (groupSelection) => {
   const groupedBooks = books.reduce((grouped, book) => {
     let key = book[groupSelection];
     if (groupSelection == 'none') key = 'All Books';
@@ -55,10 +33,6 @@ const groupBooks = (groupSelection, sortSelection) => {
     grouped[key].push(book);
     return grouped;
   }, {});
-
-  for (const key in groupedBooks) {
-    sortBooks(groupedBooks[key], sortSelection);
-  }
 
   return groupedBooks;
 };

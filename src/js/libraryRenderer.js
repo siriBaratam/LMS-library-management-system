@@ -36,7 +36,7 @@ const getDarkColor = () => {
   return finalColor + '80';
 };
 
-const genreColor = genre => {
+const generateOrGetGenreColor = genre => {
   const genreLowerCase = genre.toLowerCase();
   const color = genreToColor[genreLowerCase] || getDarkColor();
   genreToColor[genreLowerCase] = color;
@@ -45,7 +45,7 @@ const genreColor = genre => {
 
 const createGenre = genre => {
   const tag = createPTag(genre, 'genre');
-  tag.style.backgroundColor = genreColor(genre);
+  tag.style.backgroundColor = generateOrGetGenreColor(genre);
   return tag;
 };
 
@@ -258,7 +258,6 @@ const createAndAppendAddBookButton = parent => {
 
 const addHomePageActions = () => {
   const container = document.getElementsByClassName('home-actions')[0];
-  createDropdown('Sort', false, container);
   createDropdown('Group', true, container);
   createAndAppendAddBookButton(container);
 };
@@ -343,8 +342,8 @@ const renderBook = (book, parent) => {
   parent.appendChild(bookContainer);
 };
 
-const renderGroupedBooks = (groupSelection, sortSelection) => {
-  const groupedBooks = groupBooks(groupSelection, sortSelection);
+const renderGroupedBooks = (groupSelection) => {
+  const groupedBooks = groupBooks(groupSelection);
   const grouped = Object.entries(groupedBooks);
   const booksContainer = document.getElementById('books');
   booksContainer.innerHTML = '';
@@ -397,10 +396,7 @@ const groupAndRenderBooks = (scrollToTop = false) => {
   const groupDropdown = document.getElementById('group-by');
   const groupSelection = groupDropdown.value;
 
-  const sortDropdown = document.getElementById('sort-by');
-  const sortSelection = sortDropdown.value;
-
-  renderGroupedBooks(groupSelection, sortSelection);
+  renderGroupedBooks(groupSelection);
   renderLegends();
   scrollToTop && window.scrollTo({ top: 0, behavior: 'smooth' });
 };

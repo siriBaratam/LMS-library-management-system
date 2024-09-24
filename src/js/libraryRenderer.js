@@ -62,6 +62,7 @@ const afterLoadingEvents = () => {
   select.removeEventListener('change', showWaitPopUp);
   button.removeEventListener('click', showWaitPopUp);
 
+  select.value = 'none';
   button.addEventListener('click',showAddBookPopup);
   select.addEventListener('change',groupAndRenderBooks);
 };

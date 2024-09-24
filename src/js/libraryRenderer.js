@@ -59,17 +59,11 @@ const createButton = (text, className) => {
 const afterLoadingEvents = () => {
   const button = document.getElementsByClassName('add-book-button')[0];
   const select = document.getElementById('group-by');
-  select.removeEventListener('click', showWaitPopUp);
+  select.removeEventListener('change', showWaitPopUp);
   button.removeEventListener('click', showWaitPopUp);
 
   button.addEventListener('click',showAddBookPopup);
   select.addEventListener('change',groupAndRenderBooks);
-  dropDownOptions.forEach(({ value, text }) => {
-    const option = document.createElement('option');
-    option.value = value;
-    option.innerText = text;
-    select.appendChild(option);
-  });
 };
 
 const createAvailabilityBar = isAvailable => {
@@ -250,7 +244,14 @@ const createDropdown = (text, scrollToTop, parent) => {
 
   const select = document.createElement('select');
   select.id = id;
-  select.name = id;
+  select.name = id;  
+  
+  dropDownOptions.forEach(({ value, text }) => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.innerText = text;
+    select.appendChild(option);
+  });
   container.appendChild(select);
   parent.appendChild(container);
 };
@@ -432,7 +433,7 @@ const beforeLoadingEvents = () => {
   const select = document.getElementById('group-by');
   const bookButton = document.getElementsByClassName('add-book-button')[0];
   createWaitPopUp();
-  select.addEventListener('click', showWaitPopUp);
+  select.addEventListener('change', showWaitPopUp);
   bookButton.addEventListener('click', showWaitPopUp);
 };
 

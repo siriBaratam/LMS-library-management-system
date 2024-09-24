@@ -192,8 +192,6 @@ Extraordinary Cases of Sherlock Holmes,1995-06-01,Juvenile Fiction,Arthur Conan 
 HRH,2020-11-17,Biography & Autobiography,Elizabeth Holmes
 Enola Holmes: The Case of the Missing Marquess,2007-11-08,Juvenile Fiction,Nancy Springer
 365 Science of Mind,2007-12-27,Philosophy,Ernest Holmes
-Mycroft Holmes,2015-09-25,Fiction,Kareem Abdul-Jabbar| Anna Waterhouse
-The Adventures of Sherlock Holmes,2020-05-31,N/A,A. B. Press| Arthur Conan Doyle
 Holmes Leaflets,1905,N/A,Oliver Wendell Holmes
 The Poetical Works of Oliver Wendell Holmes,2016-01-16,N/A,Oliver Wendell Holmes
 The Fundamental Holmes,2010,Freedom of expression,Oliver Wendell Holmes (Jr.)

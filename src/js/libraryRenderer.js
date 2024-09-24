@@ -404,3 +404,27 @@ const groupAndRenderBooks = (scrollToTop = false) => {
 const render = () => {
   groupAndRenderBooks();
 };
+
+const createPopUp = () => {
+  const main = document.getElementById('main');
+  const container = document.createElement('div');
+  const heading = document.createElement('h4');
+  container.id = 'pop-up';
+  heading.innerText = 'please wait';
+  container.appendChild(heading);
+  main.appendChild(container);
+};
+
+const showPopUp = () => {
+  const popUp = document.getElementById('pop-up');
+  popUp.style.display = 'block';
+  setTimeout(() => {
+    popUp.style.display = 'none';
+  },2000);
+};
+
+const newFunction = () => {
+  const dropDown = document.getElementsByClassName('home-actions')[0];
+  createPopUp();
+  dropDown.addEventListener('click', showPopUp);
+};

@@ -24,8 +24,8 @@ body {
     font-size: 2rem;
   }
   #loading-symbol{
-    border: 10px solid #9e9d9d;
-    border-top: 10px solid #3498db;
+    border: 5px solid #9e9d9d;
+    border-right: 5px solid #f7f7f7;
     border-radius: 50%;
     width: 30px;
     height: 30px;

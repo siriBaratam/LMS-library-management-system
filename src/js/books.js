@@ -219,7 +219,7 @@ const removeClassMain = () => {
 
 const loader = () => {
   const booksContainer = document.getElementById('books');
-  booksContainer.innerHTML = 'Loading...';
+  booksContainer.innerHTML = 'Loading....';
 };
 
 window.onload = main;

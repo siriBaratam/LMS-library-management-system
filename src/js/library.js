@@ -37,7 +37,7 @@ const groupBooks = (groupSelection) => {
   return groupedBooks;
 };
 
-const load = booksCSVData => {
+const load = (booksCSVData) => {
   booksCSVData
     .split('\n')
     .slice(1)

@@ -202,25 +202,21 @@ Holmes of Kyoto: Volume 5,2021-05-27,Young Adult Fiction,Mai Mochizuki`;
 let libraryRenderer;
 
 const main = () => {
-  setTimeout(() => {
-    removeClassMain();
-    afterLoading();
-    load(booksCSVData); 
-    groupAndRenderBooks();
-  },5000);
-  loader();
-  addHomePageActions();
-  newFunction();
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      removeClassMain();
+      resolve();
+    },5000);
+
+    displayLoader();
+    addHomePageActions();
+    newFunction();
+  })
 };
 
-const removeClassMain = () => {
-  const main = document.getElementById('main');
-  main.removeAttribute('class','main');
+window.onload = () => {
+  main()
+    .then(() => {afterLoading()})
+    .then(() => {load(booksCSVData)})
+    .then(() => {groupAndRenderBooks()});
 };
-
-const loader = () => {
-  const booksContainer = document.getElementById('books');
-  booksContainer.innerHTML = 'Loading...';
-};
-
-window.onload = main;

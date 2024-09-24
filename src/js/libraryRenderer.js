@@ -429,3 +429,12 @@ const newFunction = () => {
   createWaitPopUp();
   headActions.addEventListener('click', showWaitPopUp);
 };
+const removeClassMain = () => {
+  const main = document.getElementById('main');
+  main.removeAttribute('class','main');
+};
+
+const displayLoader = () => {
+  const booksContainer = document.getElementById('books');
+  booksContainer.innerText = 'Loading...';
+};

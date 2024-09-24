@@ -207,7 +207,7 @@ const main = () => {
     afterLoading();
     load(booksCSVData); 
     groupAndRenderBooks();
-  },6000);
+  },5000);
   loader();
   addHomePageActions();
   newFunction();

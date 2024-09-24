@@ -210,13 +210,13 @@ const main = () => {
 
     displayLoader();
     addHomePageActions();
-    newFunction();
+    beforeLoadingEvents();
   })
 };
 
 window.onload = () => {
   main()
-    .then(() => {afterLoading()})
+    .then(() => {afterLoadingEvents()})
     .then(() => {load(booksCSVData)})
     .then(() => {groupAndRenderBooks()});
 };

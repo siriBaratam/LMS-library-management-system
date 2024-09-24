@@ -56,12 +56,12 @@ const createButton = (text, className) => {
   return button;
 };
 
-const afterLoading = () => {
+const afterLoadingEvents = () => {
   const button = document.getElementsByClassName('add-book-button')[0];
   const select = document.getElementById('group-by');
   select.removeEventListener('click', showWaitPopUp);
   button.removeEventListener('click', showWaitPopUp);
-  
+
   button.addEventListener('click',showAddBookPopup);
   select.addEventListener('change',groupAndRenderBooks);
   dropDownOptions.forEach(({ value, text }) => {
@@ -428,7 +428,7 @@ const showWaitPopUp = () => {
   },2000);
 };
 
-const newFunction = () => {
+const beforeLoadingEvents = () => {
   const select = document.getElementById('group-by');
   const bookButton = document.getElementsByClassName('add-book-button')[0];
   createWaitPopUp();

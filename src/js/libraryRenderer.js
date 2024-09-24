@@ -405,7 +405,7 @@ const render = () => {
   groupAndRenderBooks();
 };
 
-const createPopUp = () => {
+const createWaitPopUp = () => {
   const main = document.getElementById('main');
   const container = document.createElement('div');
   const heading = document.createElement('h4');
@@ -415,7 +415,7 @@ const createPopUp = () => {
   main.appendChild(container);
 };
 
-const showPopUp = () => {
+const showWaitPopUp = () => {
   const popUp = document.getElementById('pop-up');
   popUp.style.display = 'block';
   setTimeout(() => {
@@ -425,6 +425,6 @@ const showPopUp = () => {
 
 const newFunction = () => {
   const dropDown = document.getElementsByClassName('home-actions')[0];
-  createPopUp();
-  dropDown.addEventListener('click', showPopUp);
+  createWaitPopUp();
+  dropDown.addEventListener('click', showWaitPopUp);
 };

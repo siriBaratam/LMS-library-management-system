@@ -58,9 +58,10 @@ const createButton = (text, className) => {
 
 const afterLoading = () => {
   const button = document.getElementsByClassName('add-book-button')[0];
-  const headActions = document.getElementsByClassName('home-actions')[0];
   const select = document.getElementById('group-by');
-  headActions.removeEventListener('click', showWaitPopUp);
+  select.removeEventListener('click', showWaitPopUp);
+  button.removeEventListener('click', showWaitPopUp);
+  
   button.addEventListener('click',showAddBookPopup);
   select.addEventListener('change',groupAndRenderBooks);
   dropDownOptions.forEach(({ value, text }) => {
@@ -428,10 +429,13 @@ const showWaitPopUp = () => {
 };
 
 const newFunction = () => {
-  const headActions = document.getElementsByClassName('home-actions')[0];
+  const select = document.getElementById('group-by');
+  const bookButton = document.getElementsByClassName('add-book-button')[0];
   createWaitPopUp();
-  headActions.addEventListener('click', showWaitPopUp);
+  select.addEventListener('click', showWaitPopUp);
+  bookButton.addEventListener('click', showWaitPopUp);
 };
+
 const removeClassMain = () => {
   const main = document.getElementById('main');
   main.removeAttribute('class','main');

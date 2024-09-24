@@ -23,7 +23,28 @@ body {
   #books {
     font-size: 2rem;
   }
+  #loading-symbol{
+    border: 10px solid #9e9d9d;
+    border-top: 10px solid #3498db;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    bottom: 40px;
+    left: 140px;
+    animation: spin 2s linear infinite;
+  }
 }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 #legends {
   display: flex;
   justify-content: right;

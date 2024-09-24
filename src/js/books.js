@@ -209,7 +209,7 @@ const main = () => {
   },6000);
   loader();
   addHomePageActions();
-  newFunction();
+  // newFunction();
 };
 
 const removeClassMain = () => {

@@ -4,6 +4,26 @@ body {
   word-break: break-all;
 }
 
+#pop-up {
+  width: 20vw;
+  height: 20vh;
+  position: fixed;
+  top: 30%;
+  left: 40%;
+  padding-left: 20px;
+  z-index: 1000;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px grey;
+  display: none;
+}
+.main {
+  margin-top: 20%;
+  margin-left: 45%;
+  #books {
+    font-size: 2rem;
+  }
+}
 #legends {
   display: flex;
   justify-content: right;
@@ -232,3 +252,4 @@ header {
   border: 1px solid black;
   outline: none;
 }
+

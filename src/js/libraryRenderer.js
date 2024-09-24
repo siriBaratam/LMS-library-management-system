@@ -249,7 +249,7 @@ const createDropdown = (text, scrollToTop, parent) => {
   parent.appendChild(container);
 };
 
-const createAndAppendAddBookButton = parent => {
+const createAndAppendAddBookButton = (parent) => {
   const text = 'Add new book';
   const className = 'add-book-button';
   const addBookButton = createButton(text, className, () => showAddBookPopup());
@@ -402,6 +402,5 @@ const groupAndRenderBooks = (scrollToTop = false) => {
 };
 
 const render = () => {
-  addHomePageActions();
   groupAndRenderBooks();
 };

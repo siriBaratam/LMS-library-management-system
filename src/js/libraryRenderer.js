@@ -424,8 +424,12 @@ const createWaitPopUp = () => {
 const showWaitPopUp = () => {
   const popUp = document.getElementById('pop-up');
   popUp.style.display = 'block';
+  const header = document.getElementById('header');
+  header.classList.add('disabled');
+  
   setTimeout(() => {
     popUp.style.display = 'none';
+    header.classList.remove('disabled');
   },2000);
 };
 

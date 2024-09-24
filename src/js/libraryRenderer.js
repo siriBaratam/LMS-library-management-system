@@ -49,12 +49,26 @@ const createGenre = genre => {
   return tag;
 };
 
-const createButton = (text, className, callback) => {
+const createButton = (text, className) => {
   const button = document.createElement('button');
   button.classList.add(className);
   button.innerText = text;
-  callback && button.addEventListener('click', callback);
   return button;
+};
+
+const afterLoading = () => {
+  const button = document.getElementsByClassName('add-book-button')[0];
+  const headActions = document.getElementsByClassName('home-actions')[0];
+  const select = document.getElementById('group-by');
+  headActions.removeEventListener('click', showWaitPopUp);
+  button.addEventListener('click',showAddBookPopup);
+  select.addEventListener('change',groupAndRenderBooks);
+  dropDownOptions.forEach(({ value, text }) => {
+    const option = document.createElement('option');
+    option.value = value;
+    option.innerText = text;
+    select.appendChild(option);
+  });
 };
 
 const createAvailabilityBar = isAvailable => {
@@ -236,23 +250,14 @@ const createDropdown = (text, scrollToTop, parent) => {
   const select = document.createElement('select');
   select.id = id;
   select.name = id;
-  select.addEventListener('change', () => groupAndRenderBooks(scrollToTop));
   container.appendChild(select);
-
-  dropDownOptions.forEach(({ value, text }) => {
-    const option = document.createElement('option');
-    option.value = value;
-    option.innerText = text;
-    select.appendChild(option);
-  });
-
   parent.appendChild(container);
 };
 
 const createAndAppendAddBookButton = (parent) => {
   const text = 'Add new book';
   const className = 'add-book-button';
-  const addBookButton = createButton(text, className, () => showAddBookPopup());
+  const addBookButton = createButton(text, className);
   parent.appendChild(addBookButton);
 };
 
@@ -401,10 +406,6 @@ const groupAndRenderBooks = (scrollToTop = false) => {
   scrollToTop && window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-const render = () => {
-  groupAndRenderBooks();
-};
-
 const createWaitPopUp = () => {
   const main = document.getElementById('main');
   const container = document.createElement('div');
@@ -424,7 +425,7 @@ const showWaitPopUp = () => {
 };
 
 const newFunction = () => {
-  const dropDown = document.getElementsByClassName('home-actions')[0];
+  const headActions = document.getElementsByClassName('home-actions')[0];
   createWaitPopUp();
-  dropDown.addEventListener('click', showWaitPopUp);
+  headActions.addEventListener('click', showWaitPopUp);
 };

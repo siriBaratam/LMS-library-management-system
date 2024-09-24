@@ -204,8 +204,9 @@ let libraryRenderer;
 const main = () => {
   setTimeout(() => {
     removeClassMain();
-    load(booksCSVData);
-    render();
+    afterLoading();
+    load(booksCSVData); 
+    groupAndRenderBooks();
   },6000);
   loader();
   addHomePageActions();

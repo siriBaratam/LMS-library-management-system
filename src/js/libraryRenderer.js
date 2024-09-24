@@ -410,9 +410,12 @@ const createWaitPopUp = () => {
   const main = document.getElementById('main');
   const container = document.createElement('div');
   const heading = document.createElement('h4');
+  const para = document.createElement('p');
   container.id = 'pop-up';
-  heading.innerText = 'please wait';
+  heading.innerText = 'Books are still loading..';
+  para.innerText = 'Please Wait!';
   container.appendChild(heading);
+  container.appendChild(para);
   main.appendChild(container);
 };
 
@@ -436,5 +439,5 @@ const removeClassMain = () => {
 
 const displayLoader = () => {
   const booksContainer = document.getElementById('books');
-  booksContainer.innerText = 'Loading...';
+  booksContainer.innerText = 'Books Loading...';
 };

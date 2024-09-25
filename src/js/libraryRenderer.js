@@ -61,12 +61,13 @@ const afterLoadingEvents = () => {
   const select = document.getElementById('group-by');
   const popUp = document.getElementById('pop-up');
   const header = document.getElementById('header');
+  const main = document.getElementById('main');
   select.removeEventListener('change', showWaitPopUp);
   button.removeEventListener('click', showWaitPopUp);
-
   select.value = 'none';
   popUp.style.display = 'none';
   header.classList.remove('disabled');
+  main.classList.remove('disabled');
   button.addEventListener('click',showAddBookPopup);
   select.addEventListener('change',groupAndRenderBooks);
 };
@@ -414,16 +415,17 @@ const groupAndRenderBooks = (scrollToTop = false) => {
 };
 
 const createWaitPopUp = () => {
-  const main = document.getElementById('main');
+  const body = document.body;
   const container = document.createElement('div');
   const heading = document.createElement('h4');
   const para = document.createElement('p');
   container.id = 'pop-up';
+  container.classList.add ('popup-container');
   heading.innerText = 'Books are still loading..';
   para.innerText = 'Please Wait!';
   container.appendChild(heading);
   container.appendChild(para);
-  main.appendChild(container);
+  body.appendChild(container);
 };
 
 const showWaitPopUp = () => {
@@ -431,10 +433,13 @@ const showWaitPopUp = () => {
   popUp.style.display = 'block';
   const header = document.getElementById('header');
   header.classList.add('disabled');
+  const main = document.getElementById('main');
+  main.classList.add('disabled');
   
   setTimeout(() => {
     popUp.style.display = 'none';
     header.classList.remove('disabled');
+    main.classList.remove('disabled');
   },2000);
 };
 

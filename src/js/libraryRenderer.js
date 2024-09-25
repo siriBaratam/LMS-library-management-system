@@ -59,10 +59,14 @@ const createButton = (text, className) => {
 const afterLoadingEvents = () => {
   const button = document.getElementsByClassName('add-book-button')[0];
   const select = document.getElementById('group-by');
+  const popUp = document.getElementById('pop-up');
+  const header = document.getElementById('header');
   select.removeEventListener('change', showWaitPopUp);
   button.removeEventListener('click', showWaitPopUp);
 
   select.value = 'none';
+  popUp.style.display = 'none';
+  header.classList.remove('disabled');
   button.addEventListener('click',showAddBookPopup);
   select.addEventListener('change',groupAndRenderBooks);
 };
